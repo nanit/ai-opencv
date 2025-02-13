@@ -1,0 +1,5 @@
+[package]
+name = "ai-opencv-builder"
+edition = "2021"
+version = "0.0.1+opencv4.9.0"
+

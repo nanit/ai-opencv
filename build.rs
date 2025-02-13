@@ -313,6 +313,9 @@ fn build_wrapper(mut cc: cc::Build, modules: &[String], module_aliases: &HashMap
 }
 
 fn main() -> Result<()> {
+
+	env::set_var("OpenCV_DIR", ai_opencv_builder::OPENCV_DIR);
+
 	let args = env::args_os().skip(1).peekable();
 	if matches!(handle_running_binding_generator(args)?, GenerateFullBindings::Stop) {
 		return Ok(());
