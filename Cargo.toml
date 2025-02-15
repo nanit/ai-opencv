@@ -226,4 +226,4 @@ no-default-features = true
 
 [workspace.metadata.release]
 shared-version = true
-tag-name = "v{{version}}{{metadata}}"
+tag-name = "v{{version}}+{{metadata}}"
