@@ -408,7 +408,7 @@ fn main() -> Result<()> {
 
 	setup_rerun()?;
 
-	let ffi_export_suffix = format!("_{}", pkg_version.replace(".", "_"));
+	let ffi_export_suffix = format!("_{}", pkg_version.replace(".", "_").replace("+", "_"));
 	let build_script_path = env::current_exe()?;
 	let binding_generator = BindingGenerator::new(&build_script_path, &modules, &module_aliases);
 	binding_generator.generate_wrapper(opencv_header_dir, &opencv, &ffi_export_suffix)?;

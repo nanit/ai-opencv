@@ -3,7 +3,7 @@ name = "opencv"
 description = "Rust bindings for OpenCV"
 documentation = "https://docs.rs/opencv"
 repository = "https://github.com/twistedfall/opencv-rust"
-version = "0.94.2"
+version.workspace = true
 readme = "README.md"
 keywords = ["opencv", "vision"]
 license = "MIT"
@@ -19,6 +19,7 @@ doctest = false
 maintenance = { status = "actively-developed" }
 
 [workspace]
+package.version = "0.94.2+opencv4.9.0"
 members = ["binding-generator", "ai-opencv-builder"]
 
 [dependencies]
@@ -222,3 +223,7 @@ f16 = ["dep:half"]
 
 [package.metadata.docs.rs]
 no-default-features = true
+
+[workspace.metadata.release]
+shared-version = true
+tag-name = "v{{version}}"
