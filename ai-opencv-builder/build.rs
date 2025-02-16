@@ -132,7 +132,7 @@ fn opencv_version() -> String {
 	version
 		.split("opencv")
 		.last()
-		.expect(format!("version string: {version} is missing opencv version").as_str())
+		.unwrap_or_else(|| panic!("version string: {version} is missing opencv version"))
 		.to_string()
 }
 
